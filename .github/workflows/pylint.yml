@@ -20,7 +20,12 @@ jobs:
         pip install selenium
         pip install pip install Appium-Python-Client
     - name: Running the tunnel
-      run: run_lt.bat
+      run: |
+        if [ ${{ matrix.os }} == 'ubuntu-latest' ]; then
+          ./run_lt_linux.sh  # Execute the Linux script
+        elif [ ${{ matrix.os }} == 'windows-latest' ]; then
+          powershell -File run_lt_windows.ps1  # Execute the Windows PowerShell script
+        fi
     - name: Running the Script
       run: python android.py
     
