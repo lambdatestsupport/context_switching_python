@@ -71,7 +71,9 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 
 ### Lets Discuss In Detail About Switch Context
 
-```Get all the context
+
+**Get All The Context Of The App**
+```
   all_contexts = driver.contexts
   print(all_contexts)
 ```
