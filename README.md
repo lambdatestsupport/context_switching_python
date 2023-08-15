@@ -42,11 +42,11 @@ Before you can start performing App automation testing with Appium, you would ne
 
 ### Clone The Sample Project
 
-Clone the LambdaTest’s [LT-appium-python](https://github.com/LambdaTest/Python-UnitTest-Selenium) and navigate to the code directory as shown below:
+Clone the LambdaTest’s [LT-appium-python](https://github.com/ritamganguli/LT_context_switching_python) and navigate to the code directory as shown below:
 
 ```bash
-git clone https://github.com/LambdaTest/LT-appium-python
-cd LT-appium-python
+git clone https://github.com/ritamganguli/LT_context_switching_python
+cd context_switching
 ```
 
 ### Setting Up Your Authentication
@@ -86,11 +86,13 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **Windows:**
 
-```powershell
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""
+```Get all the context
+  all_contexts = driver.contexts
+  print(all_contexts)
 ```
 
 **Using App URL:**
+
 
 **Linux/macOS:**
 
