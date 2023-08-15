@@ -87,7 +87,7 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 
 **Switch To Current Context Of The App**
 ```
-  driver.switch_to.context(current_context)
+  driver.switch_to.context(name_of_context_in_which_you_want_to_switch)
 ```
 
 ## Run Your First Test
