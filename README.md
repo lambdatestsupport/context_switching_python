@@ -69,22 +69,7 @@ set LT_USERNAME=YOUR_LAMBDATEST_USERNAME `
 set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 ```
 
-### Upload Your Application
-
-**Step-3:** Upload your **_iOS_** application (.ipa file) or **_android_** application (.apk file) to the LambdaTest servers using our **REST API**. You need to provide your **Username** and **AccessKey** in the format `Username:AccessKey` in the **cURL** command for authentication. Make sure to add the path of the **appFile** in the cURL request. Here is an example cURL request to upload your app using our REST API:
-
-**Using App File:**
-
-**Linux/macOS:**
-
-```bash
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
---location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
---form 'name="Android_App"' \
---form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"'
-```
-
-**Windows:**
+### Lets Discuss In Detail About Switch Context
 
 ```Get all the context
   all_contexts = driver.contexts
