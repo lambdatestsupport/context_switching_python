@@ -78,96 +78,35 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
   print(all_contexts)
 ```
 
-**Using App URL:**
-
-
-**Linux/macOS:**
-
-```bash
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
---location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
---form 'name="Android_App"' \
---form 'url="https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk"'
+**Get Current Context Of The App**
+```
+  current_context = driver.context
+  print("Current Context:", current_context)
 ```
 
-**For Windows:**
 
-```powershell
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{"url":"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk","name":"sample.apk"}"
+**Switch To Current Context Of The App**
 ```
-
-**Tip:**
-
-- If you do not have any **.apk** or **.ipa** file, you can run your sample tests on LambdaTest by using our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa).
-- Response of above cURL will be a **JSON** object containing the `App URL` of the format - <lt://APP123456789123456789> and will be used in the next step.
+  driver.switch_to.context(current_context)
+```
 
 ## Run Your First Test
 
 Once you are done with the above-mentioned steps, you can initiate your first Python test on LambdaTest.
 
-**Test Scenario:** Check out [Android.py](https://github.com/LambdaTest/LT-appium-python/blob/master/android.py) file to view the sample test script for android and [iOS.py](https://github.com/LambdaTest/LT-appium-python/blob/master/ios.py) for iOS.
-
-### Configuring Your Test Capabilities
-
-You can update your custom capabilities in test scripts. In this sample project, we are passing platform name, platform version, device name and app url (generated earlier) along with other capabilities like build name and test name via capabilities object. The capabilities object in the sample code are defined as:
-
-**iOS:**
-
-```python title="iOS(.ipa)"
- desired_caps = {
-    "deviceName":"iPhone 12",
-    "platformName":"ios",
-    "platformVersion":"14",
-    "isRealMobile":True,
-    "app":"YOUR_APP_URL",
-    "build":"Python Vanilla iOS",
-    "name":"Sample Test - Python",
-    "network":True,
-    "visual":True,
-    "video":True
-}
-```
-**Android:**
-
-```python title="Android(.apk)"
-desired_caps = {
-    "deviceName":"Galaxy S20",
-    "platformName":"Android",
-    "platformVersion":"10",
-    "app":"YOUR_APP_URL",
-    "isRealMobile":True,
-    "build":"Python Vanilla Android",
-    "name":"Sample Test - Python",
-    "network":True,
-    "visual":True,
-    "video":True
-}
-```
-
-**Info Note:**
-
-- You must add the generated **APP_URL** to the `"app"` capability in the config file.
-- You can generate capabilities for your test requirements with the help of our inbuilt **[Capabilities Generator tool](https://www.lambdatest.com/capabilities-generator/beta/index.html?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python)**. A more Detailed Capability Guide is available [here](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python).
+**Test Scenario:** Check out (https://github.com/ritamganguli/LT_context_switching_python) file to view the sample test script.
 
 ## Executing The Tests
 
 Run the following command in the directory where your project has been saved to execute your build.
 
-**Android:**
-
 ```bash
 python3 android.py
 ```
 
-**IOS:**
-
-```bash
-python3 ios.py
 ```
 **Info Note:**
 If you are unable to run the automation script with the above mentioned commands try **'python'** command except for **'python3'**.
-
-> Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python).
 
 > If you fail to run the tests, try creating virtual env and installing the dependencies in that environment to run the tests.
 > Creating and activating a virtual environment
